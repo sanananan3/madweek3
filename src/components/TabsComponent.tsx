@@ -23,7 +23,7 @@ const TabsComponent: React.FC<TabsComponentProps> = ({ counts }) => {
         ))}
       </div>
       <div className="tab-content">
-        <h1>Content for Tab {activeTab + 1}</h1>
+        <h1>Tab {activeTab + 1}</h1>
       </div>
     </div>
   );
