@@ -1,7 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import TestComponent from './pages/Test';
+import TestComponent from './pages/hCounting';
+import ParsingTestComponent from './pages/parsingTest';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
         <TestComponent />
+        <ParsingTestComponent />
         <a
           className="App-link"
           href="https://reactjs.org"

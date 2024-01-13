@@ -11,3 +11,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.tab-content {
+  margin-top: 20px;
+}
+
+.tab-content p,
+.tab-content img,
+.tab-content blockquote,
+.tab-content hr {
+  margin: 10px 0;
+}
+
+.tab-content blockquote {
+  border-left: 4px solid #ddd;
+  padding-left: 16px;
+  color: #666;
+}
+
+.tab-content img {
+  max-width: 100%;
+  height: auto;
+}
