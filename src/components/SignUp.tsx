@@ -1,64 +1,49 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import axios from 'axios';
 
 
-    const SignUp: React.FC = () => {
-        
-        const [userId, setUserId] = useState('');
-        const [userPw, setUserPw] = useState('');
+const SignUp: React.FC = () => {
 
-        const handleSignUp = async () => {
+    const [userId, setUserId] = useState('');
+    const [userPw, setUserPw] = useState('');
 
-            try {
-                const response = await axios.post('/api/signup', {
-                    userId,
-                    userPw,
-                });
+    const handleSignUp = async (event: React.FormEvent) => {
 
-                console.log(response.data);
+        try {
+            const response = await axios.post('/api/signup', {
+                userId,
+                userPw,
+            });
 
-            } catch (error) {
-                console.error('Error during sign up', error);
+            console.log(response.data);
 
-            }
-        };
+        } catch (error) {
+            console.error('Error during sign up', error);
 
-        return (
-            <section id ="signup">
-            <div className ="signup__inner">
-                <h1 className="signup__title">회원가입</h1>
-                <div className = "signup__lines" aria-hidden="true">
-                <span className="line"></span>
-                    <span className="line"></span>
-                    <span className="line"></span>
-                    <span className="line"></span>
-                    <span className="line"></span>
-                    <span className="line"></span>
-                    <span className="line"></span>
-                    </div>
-                    <div className="signup__top">
-                    <div className="signup__id">
-                        아이디  
-                        <input type="text" id= "input_id" value={userId} onChange={(e) => setUserId(e.target.value)} />
-                   
-                    </div>  
-                </div>
-
-                <br />
-
-                <div className="signup__bottom">
-                    <div className="signup_pw">
-                    비밀번호 
-                    <input type="password" id="input_pw"  value={userPw} onChange={(e) => setUserPw(e.target.value)} />
-                </div>
-                </div>
-                <br/>
-                <button onClick={handleSignUp}>회원가입</button>
-          
-            </div>
-            </section>
-        );
+        }
     };
+
+    return (
+        <form onSubmit={handleSignUp}>
+          <input 
+            type="text" 
+            placeholder="Username" 
+            value={userId}
+            onChange={(e) => setUserId(e.target.value)} 
+            required 
+          />
+          <input 
+            type="password" 
+            placeholder="Create Password" 
+            value={userPw}
+            onChange={(e) => setUserPw(e.target.value)} 
+            required 
+          />
+          <button type="submit">Sign Up</button>
+          
+        </form>
+      );
+};
 
 
 

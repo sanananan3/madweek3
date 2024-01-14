@@ -10,14 +10,17 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
+  // <React.StrictMode>
+  //   <Router>
+  //     <Routes>
+  //       <Route path="/" element={<App />} />
+  //       {/* <Route path="/home" element={<HomePage />} />
+  //       <Route path="/markdown" element={<MarkdownPage />} /> */}
+  //     </Routes>
+  //   </Router>
+  // </React.StrictMode>
   <React.StrictMode>
-    <Router>
-      <Routes>
-        <Route path="/" element={<App />} />
-        {/* <Route path="/home" element={<HomePage />} />
-        <Route path="/markdown" element={<MarkdownPage />} /> */}
-      </Routes>
-    </Router>
+    <App />
   </React.StrictMode>
 );
 
