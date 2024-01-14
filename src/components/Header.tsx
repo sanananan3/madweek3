@@ -41,6 +41,10 @@ const Header: FC<HeaderProps> = ({ setShowModal, isLoggedIn }) => {
         {
             title: "portfolio",
             url: "#portfolio"
+        },
+        {
+            title: "My Page",
+            url: "/mypage"
         }
     ];
 

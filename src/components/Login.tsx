@@ -6,7 +6,6 @@ interface LoginProps {
 }
 
 const clientID = process.env.REACT_APP_GITHUB_CLIENT_ID;
-console.log(clientID);
 const clientSecret = process.env.REACT_APP_GITHUB_CLIENT_SECRET;
 
 const Login: FC<LoginProps> = ({ onLoginSuccess }) => {
@@ -20,9 +19,10 @@ const Login: FC<LoginProps> = ({ onLoginSuccess }) => {
             console.error('GitHub Client ID is not defined');
             return;
         }
-        const redirectUri = encodeURIComponent('http://localhost:3000');
+        // const redirectUri = encodeURIComponent('http://localhost:3000');
         const scope = encodeURIComponent('user');
-        const githubAuthUrl = `https://github.com/login/oauth/authorize?client_id=${clientID}&redirect_uri=${redirectUri}&scope=${scope}`;
+        // const githubAuthUrl = `https://github.com/login/oauth/authorize?client_id=${clientID}&redirect_uri=${redirectUri}&scope=${scope}`;
+        const githubAuthUrl = `https://github.com/login/oauth/authorize?client_id=${clientID}&scope=${scope}`;
         window.location.href = githubAuthUrl;
     };
 
